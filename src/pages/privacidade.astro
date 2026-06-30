@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+import { SITE_TITLE, SITE_EMAIL } from '../consts';
+---
+
+<Layout
+  title="Política de Privacidade"
+  description="Política de Privacidade do Patas em Casa."
+  pubDate={new Date('2026-06-30')}
+>
+  <h2>1. Informações que coletamos</h2>
+  <p>
+    O <strong>{SITE_TITLE}</strong> pode coletar informações pessoais como nome e e-mail 
+    quando você preenche nosso formulário de contato ou se cadastra para receber nosso 
+    conteúdo gratuito. Não vendemos nem compartilhamos seus dados com terceiros.
+  </p>
+
+  <h2>2. Cookies e dados de navegação</h2>
+  <p>
+    Utilizamos cookies para melhorar sua experiência de navegação e para fins de análise 
+    de tráfego (Google Analytics) e publicidade (Google AdSense). Você pode desativar 
+    os cookies nas configurações do seu navegador a qualquer momento.
+  </p>
+
+  <h2>3. Google AdSense</h2>
+  <p>
+    Este site utiliza o Google AdSense para exibir anúncios. O Google pode usar cookies 
+    para exibir anúncios com base nas suas visitas anteriores a este e outros sites. 
+    Saiba mais em <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+  </p>
+
+  <h2>4. Links de afiliados</h2>
+  <p>
+    Alguns links neste site são links de afiliados. Isso significa que podemos receber 
+    uma comissão se você realizar uma compra através desses links, sem custo adicional 
+    para você. Isso nos ajuda a manter o blog gratuito e ativo.
+  </p>
+
+  <h2>5. Seus direitos (LGPD)</h2>
+  <p>
+    De acordo com a Lei Geral de Proteção de Dados (LGPD), você tem direito de acessar, 
+    corrigir ou solicitar a exclusão dos seus dados pessoais. Para exercer esses direitos, 
+    entre em contato pelo e-mail <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
+  </p>
+
+  <h2>6. Contato</h2>
+  <p>
+    Dúvidas sobre esta política? Entre em contato: 
+    <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
+  </p>
+
+  <p><em>Última atualização: junho de 2026.</em></p>
+</Layout>
