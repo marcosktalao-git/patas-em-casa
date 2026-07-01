@@ -3,6 +3,7 @@
 export const SITE_TITLE = 'Patas em Casa';
 export const SITE_DESCRIPTION = 'Dicas práticas de saúde, alimentação, comportamento e produtos para cães e gatos. Para famílias que amam seus pets.';
 export const SITE_EMAIL = 'contato.patasemcasa@gmail.com';
+export const PETZ_URL = 'https://petz.com.br/parceiro/meuspetslife';
 
 // Categorias (silos)
 export const CATEGORIES = [
