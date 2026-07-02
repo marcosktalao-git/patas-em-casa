@@ -1,0 +1,37 @@
+﻿---
+interface Props {
+    position: 'header' | 'mid' | 'sidebar';
+}
+const { position } = Astro.props;
+
+const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const adsenseEnabled = import.meta.env.PUBLIC_ADSENSE_ENABLED === 'true';
+
+const slots = {
+    header: import.meta.env.PUBLIC_ADSENSE_SLOT_HEADER,
+    mid: import.meta.env.PUBLIC_ADSENSE_SLOT_MID,
+    sidebar: import.meta.env.PUBLIC_ADSENSE_SLOT_SIDEBAR,
+} as const;
+
+const showAd = adsenseEnabled && adsenseClient && slots[position];
+---
+
+{showAd ? (
+    <div class:list={[
+        'ad-slot',
+        position === 'sidebar' ? 'p-4' : 'my-8 p-6',
+        position === 'header' ? 'mx-auto max-w-3xl' : '',
+    ]} data-ad-position={position}>
+        <ins
+            class="adsbygoogle"
+            style="display:block"
+            data-ad-client={adsenseClient}
+            data-ad-slot={slots[position]}
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+        ></ins>
+        <script is:inline>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+) : null}
